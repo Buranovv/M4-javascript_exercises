@@ -1,27 +1,16 @@
-var ball = prompt("Ballni kirirting...");
+let name = prompt("Ismingizni kiriting...");
 
-if (ball < 80) {
-  alert("O`qishga kira olmadingiz");
-} else if (ball == 80 || (ball > 80 && ball < 100)) {
-  alert("Siz Super Kantrakt asosida o`qishga qabul qilindingiz!");
+let money = Number(
+  prompt(`${name}, qancha pulingiz bor? (Faqat so\`mda kiriting!)`)
+);
 
-  var efford = prompt("Kantrakt miqdori yiliga 3000$, qancha pulingiz bor?");
-  if (efford > 3000) {
-    alert("O`qishga qabul qilindingiz!");
-  } else {
-    alert("Kira olmadingiz.");
-  }
-} else if (ball == 100 || (ball > 100 && ball < 130)) {
-  alert("Siz kantrakt asosida qabul qilindingiz!");
+const travel = 500 * 11000.34;
+const hotel = 250 * 11000.34;
+const walk = 120 * 12354.03;
+let total = travel + hotel + walk;
 
-  var efford = prompt("Kantrakt miqdori yiliga 2000$, qancha pulingiz bor?");
-  if (efford > 2000) {
-    alert("O`qishga qabul qilindingiz!");
-  } else {
-    alert("Kira olmadingiz.");
-  }
-} else if (ball == 130 || (ball > 130 && ball == 180) || ball < 180) {
-  alert("Tabriklaymiz! Siz GRAND asosida o`qishga qabul qilindingiz!");
+if (money >= total) {
+  alert(`Oq yo\`l, ${name}`);
 } else {
-  alert("Mavjud bo`lmagan miqdor kiritildi!");
+  alert(`${name}, ozgina sabr qilish kerak bo\`lar ekan.`);
 }
