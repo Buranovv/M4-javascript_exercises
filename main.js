@@ -1,16 +1,31 @@
-let name = prompt("Ismingizni kiriting...");
+/*Karra-kara*/
+// let num = Number(prompt("Son kiriting..."));
 
-let money = Number(
-  prompt(`${name}, qancha pulingiz bor? (Faqat so\`mda kiriting!)`)
-);
+// if (num > 0) {
+//   for (let i = 0; i < 11; i++) {
+//     console.log(`${num} * ${i} = ${num*i}`);
+//   }
+// }
 
-const travel = 500 * 11000.34;
-const hotel = 250 * 11000.34;
-const walk = 120 * 12354.03;
-let total = travel + hotel + walk;
 
-if (money >= total) {
-  alert(`Oq yo\`l, ${name}`);
-} else {
-  alert(`${name}, ozgina sabr qilish kerak bo\`lar ekan.`);
-}
+
+/* Tub son */
+// let n = Number(prompt("Son kiriting..."));
+// let isPrime;
+
+// for (let i = 2; i <= n; i++) {
+//   for (let j = 2; j < i; j++) {
+//     isPrime = 1;
+//     if (i % j === 0) {
+//       isPrime = 0;
+//       break;
+//     }
+//   }
+//   if (isPrime === 1) {
+//     console.log(i);
+//   }
+// }
+
+
+
+/*Kalkulator*/
