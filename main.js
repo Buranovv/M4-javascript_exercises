@@ -7,8 +7,6 @@
 //   }
 // }
 
-
-
 /* Tub son */
 // let n = Number(prompt("Son kiriting..."));
 // let isPrime;
@@ -26,6 +24,27 @@
 //   }
 // }
 
-
-
 /*Kalkulator*/
+// let num1 = Number(prompt("1-sonni kiriting..."));
+// let num2 = Number(prompt("2-sonni kiriting..."));
+// let symb = prompt("Amal kiriting...");
+// console.log(typeof symb);
+// switch (symb) {
+//   case "+":
+//     alert(num1 + num2);
+//     break;
+//   case "-":
+//     alert(num1 - num2);
+//     break;
+//   case "*":
+//     alert(num1 * num2);
+//     break;
+//   case "/":
+//     alert(num1 / num2);
+//     break;
+//   case "%":
+//     alert(num1 % num2);
+//     break;
+//   default:
+//     break;
+// }
