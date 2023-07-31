@@ -4,8 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .form {
+        margin-bottom: 20px;
+      }
+      .cards {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .card {
+        width: 200px;
+        border: 1px solid black;
+      }
+      .plane {
+        transform: rotate(360 deg);
+      }
+    </style>
   </head>
   <body>
+    <div class="box">
+      <h1>Kim birinchi bo-rish-ga!</h1>
+      <form action="#" class="form">
+        <label for="#">Masofa</label>
+        <input type="text" class="input" placeholder="100km" />
+        <button type="submit" class="btn">Hisobla</button>
+      </form>
+      <div class="cards">
+        <div class="card">
+          <img src="./images/onFood.png" alt="" width="100" height="100" />
+          <h4>Piyoda</h4>
+          <p class="ptext">N soat</p>
+        </div>
+        <div class="card">
+          <img src="./images/onBike.png" alt="" width="100" height="100" />
+          <h4>Velosiped</h4>
+          <p class="vtext">N soat</p>
+        </div>
+        <div class="card">
+          <img src="./images/onCar.png" alt="" width="100" height="100" />
+          <h4>Mashina</h4>
+          <p class="mtext">N soat</p>
+        </div>
+        <div class="card">
+          <img
+            class="plane"
+            src="./images/onPlane.png"
+            alt=""
+            width="100"
+            height="100"
+          />
+          <h4>Samalyot</h4>
+          <p class="stext">N soat</p>
+        </div>
+      </div>
+    </div>
+
     <script src="/main.js"></script>
   </body>
 </html>
