@@ -32,19 +32,19 @@ btn.addEventListener("click", function (evt) {
   evt.preventDefault();
   let onFoodHour = distance.value / 3.6;
   let onFoodHourFix = Math.floor(distance.value / 3.6);
-  let foMin = Math.abs((onFoodHour - onFoodHourFix).toFixed(1) * 60);
+  let foMin = Math.floor((onFoodHour - onFoodHourFix) * 60);
 
   let onBikeHour = distance.value / 20.1;
   let onBikeHourFix = Math.floor(distance.value / 20.1);
-  let biMin = Math.abs((onBikeHour - onBikeHourFix).toFixed(1) * 60);
+  let biMin = Math.floor((onBikeHour - onBikeHourFix) * 60);
 
   let onCarHour = distance.value / 70;
   let onCarHourFix = Math.floor(distance.value / 70);
-  let caMin = Math.abs((onCarHour - onCarHourFix).toFixed(1) * 60);
+  let caMin = Math.floor((onCarHour - onCarHourFix) * 60);
 
   let onPlaneHour = distance.value / 800;
   let onPlaneHourFix = Math.floor(distance.value / 800);
-  let plMin = Math.abs((onPlaneHour - onPlaneHourFix).toFixed(1) * 60);
+  let plMin = Math.floor((onPlaneHour - onPlaneHourFix) * 60);
 
   onFood.innerHTML = `${Math.floor(distance.value / 3.6)} soat ${foMin} minut`;
   onBike.innerHTML = `${Math.floor(distance.value / 20.1)} soat ${biMin} minut`;
