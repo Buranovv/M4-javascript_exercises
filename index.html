@@ -4,67 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .box {
-        width: 1000px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      .form {
-        margin-bottom: 20px;
-      }
-      .cards {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-      }
-      .card {
-        width: 200px;
-        border: 1px solid black;
-      }
-      .plane {
-        transform:rotateY(180deg);
-      }
-    </style>
   </head>
   <body>
-    <div class="box">
-      <h1>Kim birinchi bo-rish-ga!</h1>
-      <form action="#" class="form">
-        <label for="#">Masofa</label>
-        <input type="text" class="input" placeholder="100km" />
-        <button type="submit" class="btn">Hisobla</button>
-      </form>
-      <div class="cards">
-        <div class="card">
-          <img src="./images/onFood.png" alt="" width="100" height="100" />
-          <h4>Piyoda</h4>
-          <p class="ptext">N soat</p>
-        </div>
-        <div class="card">
-          <img src="./images/onBike.png" alt="" width="100" height="100" />
-          <h4>Velosiped</h4>
-          <p class="vtext">N soat</p>
-        </div>
-        <div class="card">
-          <img src="./images/onCar.png" alt="" width="100" height="100" />
-          <h4>Mashina</h4>
-          <p class="mtext">N soat</p>
-        </div>
-        <div class="card">
-          <img
-            class="plane"
-            src="./images/onPlane.png"
-            alt=""
-            width="100"
-            height="100"
-          />
-          <h4>Samalyot</h4>
-          <p class="stext">N soat</p>
-        </div>
+    <div class="box" style="width: 1000px; margin: 0 auto; text-align: center">
+      <div
+        class="boxes"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        "
+      >
+        <div
+          class="div1"
+          style="background-color: red; width: 400px; height: 200px"
+        ></div>
+        <div
+          class="div2"
+          style="background-color: blue; width: 200px; height: 100px"
+        ></div>
+      </div>
+      <div class="box-btn" style="margin-top: 100px">
+        <form style="margin-bottom: 20px">
+          <input type="text" class="input" style="width: 15px; padding: 5px" />
+        </form>
       </div>
     </div>
-
     <script src="/main.js"></script>
   </body>
 </html>
