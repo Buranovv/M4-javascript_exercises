@@ -1,25 +1,33 @@
-const elInput = document.querySelector("#input");
-const elBtn = document.querySelector("#btn");
-const red = document.querySelector(".div1");
-const blue = document.querySelector(".div2");
+// const elName = document.querySelector(".name");
+// const elRelationship = document.querySelector(".relationship");
+// const elPhone = document.querySelector(".phone");
+// const elForm = document.querySelector("#form");
+// const elCards = document.querySelector(".cards");
 
-function red1() {
-  red.style.border = "thick solid black";
-  blue.style.border = "none";
-}
-function blue1() {
-  blue.style.border = "thick solid black";
-  red.style.border = "none";
-}
-elBtn.addEventListener("click", function (evt) {
-  evt.preventDefault();
+// elForm.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
 
-  let elInputValue = Number(elInput.value);
-  if (elInputValue < 10) {
-    red1();
-  } else if (elInputValue >= 10 && elInputValue < 20) {
-    blue1();
-  } else {
-    alert("Noto`g`ri raqam kiritildi!");
-  }
-});
+//   if (elName.value && elRelationship.value && elPhone.value !== "") {
+//     const newCard = document.createElement("div");
+//     newCard.className = "card";
+//     newCard.innerHTML = `
+//     <h4>${elName.value}</h4>
+//     <p class="relation">${elRelationship.value}</p>
+//     <p id="phone">${elPhone.value}</p>
+//     `;
+//     elCards.appendChild(newCard);
+//     elForm.reset();
+//   } else {
+//     alert("Error");
+//   }
+// });
+
+const num = [1, 3, 5, 9];
+
+// first way
+function numbersSum() {
+  let sum = num[0] + num[1] + num[2] + num[3];
+  console.log(sum);
+}
+
+numbersSum();

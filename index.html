@@ -6,39 +6,67 @@
     <title>Document</title>
 
     <style>
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+      * {
+        padding: 0;
         margin: 0;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid rgb(182, 182, 182);
+        border-radius: 5px;
+      }
+      .card {
+        border: 0.5px solid;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-top: 5px;
+      }
+      .relation {
+        color: #00000050;
+      }
+      #phone {
+        color: rgb(81, 81, 255);
+      }
+      #btn {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
       }
     </style>
   </head>
   <body>
-    <div class="box" style="width: 1000px; margin: 0 auto; text-align: center">
-      <div
-        class="boxes"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-        "
-      >
-        <div
-          class="div1"
-          style="background-color: red; width: 400px; height: 200px"
-        ></div>
-        <div
-          class="div2"
-          style="background-color: blue; width: 200px; height: 100px"
-        ></div>
-      </div>
-      <div class="box-btn" style="margin-top: 100px">
-        <form style="margin-bottom: 20px">
-          <input type="number" id="input" style="width: 15px; padding: 5px" />
-          <button id="btn" type="submit">Submit</button>
-        </form>
+    <div class="box">
+      <form id="form">
+        <h2>New contact form</h2>
+        <input type="text" placeholder="Name" class="name" />
+        <input type="text" placeholder="Relationship" class="relationship" />
+        <input type="phone" placeholder="Phone" class="phone" />
+        <button id="btn">Add contact</button>
+      </form>
+      <div class="cards">
+        <h2>Contacts</h2>
+        <div class="card">
+          <h4>Lorem ipsum dolo</h4>
+          <p class="relation">Qarindosh</p>
+          <p id="phone">+998 90 921 37 11</p>
+        </div>
       </div>
     </div>
+
     <script src="/main.js"></script>
   </body>
 </html>
