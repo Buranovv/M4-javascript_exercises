@@ -3,18 +3,38 @@ const elToDo = document.querySelector("#todo");
 const elDate = document.querySelector("#date");
 const elList = document.querySelector(".todoList");
 
-const toDoList = [1, 2, 3, 4];
+const toDoList = [];
 
-function loader(array) {
+function loader(array, parent) {
   for (let i = 0; i < array.length; i++) {
-    return array[i];
+    const newToDo = document.createElement("div");
+    newToDo.className = "todoItem";
+    newToDo.innerHTML = `
+    <h1 class="todo__title">${array[i].title}</h1>
+    <p class="todo__date">${array[i].date}</p>
+    <input class="done" type="text" placeholder="Bajarilganmi?" />
+    `;
+    parent.appendChild(newToDo);
   }
 }
-console.log(loader(toDoList));
+loader(toDoList, elList);
 
-// elForm.addEventListener("submit", function (evt) {
-//   evt.preventDefault();
+elForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
 
-//   if (elToDo.value && elDate.value !== "") {
-//   }
-// });
+  if (elToDo.value && elDate.value !== "") {
+    elList.innerHTML = "";
+
+    const newTodoList = {
+      id: elDate.value,
+      title: elToDo.value,
+      date: elDate.value,
+    };
+    toDoList.push(newTodoList);
+
+    loader(toDoList, elList);
+    elForm.reset();
+  } else {
+    alert("Error");
+  }
+});

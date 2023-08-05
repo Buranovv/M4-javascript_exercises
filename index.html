@@ -10,15 +10,32 @@
         padding: 0;
         margin: 0;
       }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 100px;
+      }
+      .box {
+        width: 1000px;
+        margin: 0 auto;
+      }
+      .todo-title {
+        border: 1px solid rgb(85, 85, 255);
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
-    <form id="form">
-      <input type="text" id="todo" />
-      <input type="text" id="date" />
-      <button id="btn" type="submit"></button>
-    </form>
-    <div class="todoList"></div>
+    <div class="box">
+      <form id="form">
+        <input type="text" id="todo" placeholder="What to do" />
+        <input type="date" id="date" placeholder="Date" />
+        <button id="btn" type="submit">Submit</button>
+      </form>
+      <div class="todoList"></div>
+    </div>
     <script src="/main.js"></script>
   </body>
 </html>
