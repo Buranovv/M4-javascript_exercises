@@ -22,12 +22,11 @@
 //   }
 // });
 
-const num = [1, 3, 5, 9];
+let num = [1, 3, 5, 9];
 
-// first way
-function numbersSum() {
-  let sum = num[0] + num[1] + num[2] + num[3];
-  console.log(sum);
+let sum = 0;
+
+for (let i = 0; i < num.length; i++) {
+  sum += num[i];
 }
-
-numbersSum();
+console.log(sum);
