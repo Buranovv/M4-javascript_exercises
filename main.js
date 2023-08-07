@@ -12,7 +12,6 @@ function loader(array, parent) {
     newToDo.innerHTML = `
     <h1 class="todo__title">${array[i].title}</h1>
     <p class="todo__date">${array[i].date}</p>
-    <input class="done" type="text" placeholder="Bajarilganmi?" />
     `;
     parent.appendChild(newToDo);
   }
@@ -29,6 +28,7 @@ elForm.addEventListener("submit", function (evt) {
       id: elDate.value,
       title: elToDo.value,
       date: elDate.value,
+      isDone: false,
     };
     toDoList.push(newTodoList);
 
