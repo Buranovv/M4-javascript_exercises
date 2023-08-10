@@ -20,7 +20,7 @@ function loader(array, parent) {
     newToDo.className =
       "todoItem d-flex align-items-center justify-content-between";
     newToDo.innerHTML = `
-    <div >
+    <div>
     <h1 class="todo__title ${
       array[i].isDone ? "text-decoration-line-through" : ""
     }">${array[i].title}</h1>
