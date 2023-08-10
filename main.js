@@ -53,7 +53,6 @@ elList.addEventListener("click", function (evt) {
 
   if (evt.target.id === "edit-btn") {
     const idE = Number(evt.target.dataset.id);
-
     for (let i = 0; i < toDoList.length; i++) {
       const element = toDoList[i];
       if (element.id === idE) {
