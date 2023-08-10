@@ -26,7 +26,10 @@ function loader(array, parent) {
     }">${array[i].title}</h1>
     <p class="todo__date">${array[i].date}</p>
     </div>
-    <img data-id="${array[i].id}" id="delete-btn" width="30" src="edit.png" />
+    <div class="d-flex gap-5">
+    <img data-id="${array[i].id}" id="delete-btn" width="30" src="delete.png" />
+    <img data-id="${array[i].id}" id="edit-btn" width="30" src="edit.png" />
+    </div>
     `;
     parent.appendChild(newToDo);
   }
@@ -36,14 +39,7 @@ loader(toDoList, elList);
 elList.addEventListener("click", function (evt) {
   if (evt.target.id === "delete-btn") {
     const id = Number(evt.target.dataset.id);
-    const newTodos = [
-      {
-        id: toDoList.length === 0 ? 0 : toDoList[toDoList.length - 1].id + 1,
-        title: elToDo.value,
-        date: elDate.value,
-        isDone: false,
-      },
-    ];
+    const newTodos = [];
     for (let i = 0; i < toDoList.length; i++) {
       const toDos = toDoList[i];
       if (toDos.id !== id) {
@@ -53,6 +49,19 @@ elList.addEventListener("click", function (evt) {
     toDoList = newTodos;
     loader(toDoList, elList);
     console.log(newTodos.id);
+  }
+
+  if (evt.target.id === "edit-btn") {
+    const idE = Number(evt.target.dataset.id);
+
+    for (let i = 0; i < toDoList.length; i++) {
+      const element = toDoList[i];
+      if (element.id === idE) {
+        element.title = elToDo.value;
+        element.date = elDate.value;
+      }
+    }
+    loader(toDoList, elList);
   }
 });
 loader(toDoList, elList);
