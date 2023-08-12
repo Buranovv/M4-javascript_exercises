@@ -16,31 +16,32 @@
         padding: 0;
         margin: 0;
       }
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-        margin: 0 auto;
-        margin-top: 100px;
-        width: 300px;
-      }
       .box {
-        width: 1000px;
+        width: 1400px;
+        height: 100px;
         margin: 0 auto;
       }
-      .todo-title {
-        border: 1px solid rgb(85, 85, 255);
-        border-radius: 5px;
-      }
-      .todoList {
-        margin: 500px;
-        margin: 0 auto;
+      .cards {
+        height: 500px;
       }
     </style>
   </head>
   <body>
-    <div class="cards d-flex flex-wrap justify-content-center gap-5"></div>
+    <div class="box">
+      <div
+        class="cards d-flex flex-wrap justify-content-center mt-5 gap-5 overflow-auto"
+      ></div>
+
+      <form id="form" class="form d-flex flex-column align-items-center gap-3 mt-5">
+        <input id="img" type="text" placeholder="Rasm uchun manzil kiriting..." />
+        <input id="tit" type="text" placeholder="Nom kiriting" />
+        <input id="price" type="text" placeholder="Narx kiriting..." />
+        <input id="text" type="text" placeholder="Mahsulotga ta`rif bering..." />
+        <input id="cate" type="text" placeholder="Mahsulot kategoriyasini kiriting..." />
+        <input id="rate" type="text" placeholder="Rating kiriting..." />
+      </form>
+      <button id="add" class="btn btn-primary w-100 mt-5 mb-5">Add card</button>
+    </div>
 
     <script src="/output.js"></script>
     <script src="/main.js"></script>
