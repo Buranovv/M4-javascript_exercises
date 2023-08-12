@@ -4,28 +4,28 @@ function getElement(element, parent = document) {
 
 const elCards = getElement(".cards");
 
-function renderFn(parent) {
-  data.forEach((element) => {
+function renderFn(array, parent) {
+  for (let i = 0; i < array.length; i++) {
     const newCard = document.createElement("div");
     newCard.className = "card";
     newCard.style.width = "18rem";
 
     newCard.innerHTML = `
-    <img class="card-img-top" src="${element.image}" alt="Card image cap">
+    <img class="card-img-top" src="${array[i].image}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">${element.title}</h5>
-      <p class="card-text">$${element.price}</p>
-      <p class="card-text">${element.description}</p>
-      <p class="card-text">${element.category}</p>
-      <p class="card-text">${element.rating}</p>
-      <button data-id="${element.id}" id="delete-btn" class="btn btn-danger">Delete</button>
+      <h5 class="card-title">${array[i].title}</h5>
+      <p class="card-text">$${array[i].price}</p>
+      <p class="card-text">${array[i].description}</p>
+      <p class="card-text">${array[i].category}</p>
+      <p class="card-text">${array[i].rating}</p>
+      <button data-id="${array[i].id}" id="delete-btn" class="btn btn-danger">Delete</button>
     </div>
     `;
 
     parent.appendChild(newCard);
-  });
+  }
 }
-renderFn(elCards);
+renderFn(data, elCards);
 
 const elCard = document.querySelector(".card");
 
@@ -37,11 +37,10 @@ elCard.addEventListener("click", function (evt) {
       const element = data[i];
       if (element.id === id) {
         newData.push(element);
+        console.log(element.id);
       }
     }
-    data = newData;
-    renderFn(elCards);
-    console.log(id);
+    renderFn(data, elCards);
   }
 });
-renderFn(elCards);
+renderFn(data, elCards);
