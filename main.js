@@ -32,9 +32,9 @@ elCards.addEventListener("click", function (evt) {
     const id = Number(evt.target.dataset.id);
     const newData = [];
     for (let i = 0; i < datas.length; i++) {
-      const element3 = datas[i];
-      if (element3.id !== id) {
-        newData.push(element3);
+      const dataSome = datas[i];
+      if (dataSome.id === id) {
+        newData.push(dataSome);
       }
     }
     datas = newData;
