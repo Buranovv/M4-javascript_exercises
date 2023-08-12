@@ -32,14 +32,16 @@ const elCard = document.querySelector(".card");
 elCard.addEventListener("click", function (evt) {
   if (evt.target.id === "delete-btn") {
     const id = Number(evt.target.dataset.id);
-    let newData = [];
-    data.forEach((element2) => {
-      if (element2.id === id) {
-        console.log(element2.id);
+    const newData = [];
+    for (let i = 0; i < data.length; i++) {
+      const element = data[i];
+      if (element.id === id) {
+        newData.push(element);
       }
-    });
+    }
     data = newData;
     renderFn(elCards);
+    console.log(id);
   }
 });
 renderFn(elCards);
