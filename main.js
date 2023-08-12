@@ -5,6 +5,8 @@ function getElement(element, parent = document) {
 const elCards = getElement(".cards");
 
 function renderFn(array, parent) {
+  parent.innerHTML = "";
+
   for (let i = 0; i < array.length; i++) {
     const newCard = document.createElement("div");
     newCard.className = "card";
@@ -33,7 +35,7 @@ elCards.addEventListener("click", function (evt) {
     const newData = [];
     for (let i = 0; i < datas.length; i++) {
       const dataSome = datas[i];
-      if (dataSome.id === id) {
+      if (dataSome.id !== id) {
         newData.push(dataSome);
       }
     }
