@@ -5,6 +5,14 @@ function getElement(element, parent = document) {
 const elCards = getElement(".cards");
 const elAdd = getElement("#add");
 
+const elForm = getElement("#form");
+const elImg = getElement("#img");
+const elTit = getElement("#tit");
+const elPrice = getElement("#price");
+const elText = getElement("#text");
+const elCate = getElement("#cate");
+const elRate = getElement("#rate");
+
 function renderFn(array, parent) {
   parent.innerHTML = "";
 
@@ -46,25 +54,11 @@ elCards.addEventListener("click", function (evt) {
 });
 renderFn(datas, elCards);
 
-const elForm = getElement("#form");
-const elImg = getElement("#img");
-const elTit = getElement("#tit");
-const elPrice = getElement("#price");
-const elText = getElement("#text");
-const elCate = getElement("#cate");
-const elRate = getElement("#rate");
-
+debugger;
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  if (
-    elImg.value &&
-    elTit.value &&
-    elPrice.value &&
-    elText.value &&
-    elCate.value &&
-    elRate.value !== ""
-  ) {
+  if (elImg.value && elTit.value !== "") {
     elCards.innerHTML = "";
 
     const newArr = {
