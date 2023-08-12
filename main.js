@@ -56,6 +56,7 @@ const elRate = getElement("#rate");
 
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+
   if (
     elImg.value &&
     elTit.value &&
@@ -64,7 +65,8 @@ elForm.addEventListener("submit", function (evt) {
     elCate.value &&
     elRate.value !== ""
   ) {
-    console.log("some");
+    elCards.innerHTML = "";
+
     const newArr = {
       id: datas.length === 0 ? 0 : datas[datas.length - 1].id + 1,
       title: elTit.value,
