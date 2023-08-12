@@ -35,12 +35,12 @@ elCard.addEventListener("click", function (evt) {
     const newData = [];
     data.forEach((element2) => {
       if (element2.id !== id) {
-        console.log("salom");
         newData.push(element2);
       }
     });
+
+    data = newData;
+    renderFn();
   }
-  data = newData;
-  renderFn();
 });
 renderFn();
