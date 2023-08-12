@@ -4,7 +4,7 @@ function getElement(element, parent = document) {
 
 const elCards = getElement(".cards");
 
-function renderFn() {
+function renderFn(parent) {
   data.forEach((element) => {
     const newCard = document.createElement("div");
     newCard.className = "card";
@@ -22,25 +22,24 @@ function renderFn() {
     </div>
     `;
 
-    elCards.appendChild(newCard);
+    parent.appendChild(newCard);
   });
 }
-renderFn();
+renderFn(elCards);
 
 const elCard = document.querySelector(".card");
 
 elCard.addEventListener("click", function (evt) {
   if (evt.target.id === "delete-btn") {
     const id = Number(evt.target.dataset.id);
-    const newData = [];
+    let newData = [];
     data.forEach((element2) => {
       if (element2.id !== id) {
         newData.push(element2);
       }
     });
 
-    data = newData;
-    renderFn();
+    renderFn(elCards);
   }
 });
-renderFn();
+renderFn(elCards);
