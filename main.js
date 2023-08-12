@@ -3,7 +3,6 @@ function getElement(element, parent = document) {
 }
 
 const elCards = getElement(".cards");
-const elCard = document.querySelector(".card");
 
 function renderFn() {
   data.forEach((element) => {
@@ -27,6 +26,8 @@ function renderFn() {
   });
 }
 renderFn();
+
+const elCard = document.querySelector(".card");
 
 elCard.addEventListener("click", function (evt) {
   if (evt.target.id === "delete-btn") {
