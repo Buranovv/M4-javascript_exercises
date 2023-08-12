@@ -34,11 +34,11 @@ elCard.addEventListener("click", function (evt) {
     const id = Number(evt.target.dataset.id);
     let newData = [];
     data.forEach((element2) => {
-      if (element2.id !== id) {
-        newData.push(element2);
+      if (element2.id === id) {
+        console.log(element2.id);
       }
     });
-
+    data = newData;
     renderFn(elCards);
   }
 });
