@@ -11,7 +11,7 @@ function renderFn(array, parent) {
     newCard.style.width = "18rem";
 
     newCard.innerHTML = `
-    <img class="card-img-top" src="${array[i].image}" alt="Card image cap">
+    <img class="card-img-top" src="${array[i].image}" alt="">
     <div class="card-body">
       <h5 class="card-title">${array[i].title}</h5>
       <p class="card-text">$${array[i].price}</p>
@@ -25,22 +25,20 @@ function renderFn(array, parent) {
     parent.appendChild(newCard);
   }
 }
-renderFn(data, elCards);
+renderFn(datas, elCards);
 
-const elCard = document.querySelector(".card");
-
-elCard.addEventListener("click", function (evt) {
+elCards.addEventListener("click", function (evt) {
   if (evt.target.id === "delete-btn") {
     const id = Number(evt.target.dataset.id);
     const newData = [];
-    for (let i = 0; i < data.length; i++) {
-      const element = data[i];
-      if (element.id === id) {
-        newData.push(element);
-        console.log(element.id);
+    for (let i = 0; i < datas.length; i++) {
+      const element3 = datas[i];
+      if (element3.id !== id) {
+        newData.push(element3);
       }
     }
-    renderFn(data, elCards);
+    datas = newData;
+    renderFn(datas, elCards);
   }
 });
-renderFn(data, elCards);
+renderFn(datas, elCards);
