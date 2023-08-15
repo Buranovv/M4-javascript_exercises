@@ -53,12 +53,9 @@ elCards.addEventListener("click", function (evt) {
   }
 });
 renderFn(datas, elCards);
-
-debugger;
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
-
-  if (elImg.value && elTit.value !== "") {
+  if (elTit.value !== "") {
     elCards.innerHTML = "";
 
     const newArr = {
@@ -72,6 +69,7 @@ elForm.addEventListener("submit", function (evt) {
         rate: elRate.value,
       },
     };
+    console.log(newArr);
     datas.push(newArr);
     renderFn(datas, elCards);
 
