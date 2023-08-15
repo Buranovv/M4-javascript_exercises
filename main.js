@@ -5,14 +5,6 @@ function getElement(element, parent = document) {
 const elCards = getElement(".cards");
 const elAdd = getElement("#add");
 
-const elForm = getElement("#form");
-const elImg = getElement("#img");
-const elTit = getElement("#tit");
-const elPrice = getElement("#price");
-const elText = getElement("#text");
-const elCate = getElement("#cate");
-const elRate = getElement("#rate");
-
 function renderFn(array, parent) {
   parent.innerHTML = "";
 
@@ -53,11 +45,18 @@ elCards.addEventListener("click", function (evt) {
   }
 });
 renderFn(datas, elCards);
+
+const elForm = document.querySelector("#form");
+const elImg = document.querySelector("#img");
+const elTit = document.querySelector("#tit");
+const elPrice = document.querySelector("#price");
+const elText = document.querySelector("#text");
+const elCate = document.querySelector("#cate");
+const elRate = document.querySelector("#rate");
+
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   if (elTit.value !== "") {
-    elCards.innerHTML = "";
-
     const newArr = {
       id: datas.length === 0 ? 0 : datas[datas.length - 1].id + 1,
       title: elTit.value,
