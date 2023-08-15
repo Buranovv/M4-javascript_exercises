@@ -21,6 +21,9 @@ function renderFn(array, parent) {
       <p class="card-text">${array[i].description}</p>
       <p class="card-text">${array[i].category}</p>
       <p class="card-text">${array[i].rating.rate}</p>
+      <button data-id="${array[i].id}" 
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal" id="edit-btn" class="btn btn-primary">Edit</button>
       <button data-id="${array[i].id}" id="delete-btn" class="btn btn-danger">Delete</button>
     </div>
     `;
@@ -45,6 +48,44 @@ elCards.addEventListener("click", function (evt) {
   }
 });
 renderFn(datas, elCards);
+
+elCards.addEventListener("click", (evt) => {
+  debugger;
+  if (evt.target.id === "edit-btn") {
+    const id2 = Number(evt.target.dataset.id);
+
+    const elMTit = getElement("#mTit");
+    const elMImg = getElement("#mImg");
+    const elMPrice = getElement("#mPrice");
+    const elMText = getElement("#mText");
+    const elMCate = getElement("#mCate");
+    const elMRate = getElement("#mRate");
+    const elUpdateBtn = getElement("#update-btn");
+    const elUpdateImg = getElement("#update-img");
+
+    datas.forEach((element) => {
+      if (element.id === id2) {
+        elMTit.value = element.title;
+        elMImg.value = element.image;
+        elMPrice.value = element.price;
+        elMText.value = element.description;
+        elMCate.value = element.category;
+        elMRate.value = element.rating.rate;
+        elUpdateImg.src = element.image;
+
+        elUpdateBtn.addEventListener("click", () => {
+          element.title = elMTit.value;
+          element.image = elMImg.value;
+          element.price = elMPrice.value;
+          element.description = elMText.value;
+          element.category = elMCate.value;
+          element.rating.rate = elMRate.value;
+          renderFn(datas, elCards);
+        });
+      }
+    });
+  }
+});
 
 const elForm = document.querySelector("#form");
 const elImg = document.querySelector("#img");
