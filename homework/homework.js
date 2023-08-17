@@ -3,13 +3,17 @@ const texti = document.querySelector("#text");
 let word = "Lorem ipsum fhgjhgjhgfdgfgfdhgfj fghdolor sit amet btrytjukjy";
 let words = word.split(" ");
 
-let max;
-var num = 0;
+function findMax(array) {
+  let max;
+  let num = 0;
 
-for (let i = 0; i < words.length; i++) {
-  if (words[i].length > num) {
-    var num = words[i].length;
-    max = words[i];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].length > num) {
+      num = array[i].length;
+      max = array[i];
+    }
   }
+  console.log(max);
+  return max;
 }
-console.log(max);
+findMax(words);
