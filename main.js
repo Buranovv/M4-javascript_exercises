@@ -66,7 +66,7 @@ elCards.addEventListener("click", (evt) => {
     datas.forEach((element) => {
       if (element.id === id2) {
         elMTit.value = element.title;
-        elMImg.value = element.image;
+        elMImg.value = element.image; 
         elMPrice.value = element.price;
         elMText.value = element.description;
         elMCate.value = element.category;
